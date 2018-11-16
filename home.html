@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./home.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <header>
+        <img id="block_page" src="./image/chain.png" alt="">
+        <a href="home.html"><img id="home_icon" src="./image/home_whtite_.png" alt="ホームアイコン"></a>
+        <a href="chathome.html"><img id="chat_icon" src="./image/chat_whtite.png" alt="チャットアイコン"></a>
+        <a href="#"><img id="white_icon" src="./image/contract_whtite.png" alt="書き込みアイコン"></a>
+        <a href="search.html"><img id="search_icon" src="./image/searching_whtite.png" alt="検索アイコン"></a>
+    </header>
+
+    <main>
+        <!--使用中のユーザ例 タップされるとプロフィール画面へ-->
+        <a href="./profile.html">
+            <div class="home_form">
+                <img class="user_image" src="./image/2.jpg" alt="ユーザ画像">
+                <p class="user_name">佐藤</p>
+                <p class="profile">佐藤＝叙々苑おごり</p>
+            </div>
+        </a>
+
+        <!--使用中のユーザがフレンドリクエストを送っているユーザ　タップされると承認ページへ-->
+        <p class="users_line">リクエスト中のユーザー</p>
+        <!--↑適切な表記が思い浮かばなかったのでいいのがあればいれといてください--->
+
+        <input type="checkbox" id="change_curtain">
+        <label id="brack_curtain" for="change_curtain">
+            <div id="request_form">
+                <img id="request_image" src="./image/2.jpg" alt="リクエストユーザ画像">
+                <p id="request_name">アズマリム</p>
+                <div id="request_profile">
+                    <p class="profile_d">ニックネーム名</p>
+                    <p class="profile_h">オメシス</p>
+                    <p class="profile_d">学科</p>
+                    <p class="profile_h">いろいろ学科</p>
+                    <p class="profile_d">コース</p>
+                    <p class="profile_h">Wecエンジニアコース</p>
+                    <p class="profile_d">学年</p>
+                    <p class="profile_h">1年</p>
+                    <p class="profile_d">年齢</p>
+                    <p class="profile_h">20歳</p>
+                    <p class="profile_d">性別</p>
+                    <p class="profile_h">男</p>
+                    <p class="profile_d">自己紹介文</p>
+                    <p class="profile_h">にゃんはろー！！</p>
+                </div>
+                <!--ボタンがおされたら再度ページを読み込み、リクエスト欄から消しておく-->
+                <input id="approval_btn" type="button" value="承認">
+                <input id="rejection_btn" type="button" value="拒否">
+            </div>
+        </label>
+        <!--リクエスト中が送られてきているユーザ例　タップすることで承認選択へ移行する -->
+        <label for="change_curtain">
+            <div class="home_form">
+                <img class="user_image" src="./image/2.jpg" alt="ユーザ画像">
+                <p class="user_name">佐藤</p>
+                <p class="profile">佐藤＝叙々苑おごり</p>
+            </div>
+        </label>
+        <label for="change_curtain">
+            <div class="home_form">
+                <img class="user_image" src="./image/2.jpg" alt="ユーザ画像">
+                <p class="user_name">佐藤</p>
+                <p class="profile">佐藤＝叙々苑おごり</p>
+            </div>
+        </label>
+
+        <!--使用ユーザに対してリクエストを送ってきている人たち　ボタンを押すとリクエストをキャンセルし、再度ページを読み込む-->
+        <p class="users_line">リクエストを送っているユーザー</p>
+        <!--↑適切な表記が思い浮かばなかったので適切な表記があればいれといてください--->
+        <div class="home_form">
+            <img class="user_image" src="./image/2.jpg" alt="ユーザ画像">
+            <p class="user_name">佐藤</p>
+            <p class="profile">佐藤ssssssssssssssssssssssssssss＝叙々苑おごり</p>
+            <!--リクエストをキャンセルするボタン-->
+            <input id="cancel_btn" type="image" src="./image/close.png" alt="リクエストキャンセルボタン">
+        </div>
+        <!--フレンドユーザ例　タップして各自のチャットぺージに飛ばす-->
+        <input type="checkbox" id="change_curtain_friend">
+        <label id="brack_curtain_friend" for="change_curtain_friend">
+            <div id="request_form_friend">
+                <img id="request_image_friend" src="./image/2.jpg" alt="リクエストユーザ画像">
+                <p id="request_name_friend">アズマリム</p>
+
+                <a href="./friend_profile.html"><input id="details_btn" type="button" value="詳細"> </a>
+                <!--↓フレンドの解消ボタン-->
+                <input id="cancellation_btn" type="button" value="フレンドを解消">
+            </div>
+        </label>
+
+        <p class="users_line">フレンドユーザー</p>
+        <label for="change_curtain_friend">
+            <div class="home_form">
+                <img class="user_image" src="./image/2.jpg" alt="ユーザ画像">
+                <p class="user_name">佐藤</p>
+                <p class="profile">佐藤＝叙々苑おごり</p>
+            </div>
+        </label>
+    </main>
+</body>
+
+</html>

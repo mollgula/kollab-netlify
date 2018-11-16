@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./profile_edit.css">
+    <script src="./profile_edit.js"></script>
+    <title>Profile</title>
+</head>
+
+<body>
+    <header>
+        <img id="block_page" src="./image/chain.png" alt="">
+        <a href="home.html"><img id="home_icon" src="./image/home_whtite_.png" alt="ホームアイコン"></a>
+        <a href="chathome.html"><img id="chat_icon" src="./image/chat_whtite.png" alt="チャットアイコン"></a>
+        <a href="#"><img id="white_icon" src="./image/contract_whtite.png" alt="書き込みアイコン"></a>
+        <a href="search.html"><img id="search_icon" src="./image/searching_whtite.png" alt="検索アイコン"></a>
+    </header>
+
+    <main>
+        <!--選択されたフレンドユーザのアイコンと名前-->
+        <div class="home_form">
+            <img class="user_image" src="./image/2.jpg" alt="ユーザ画像">
+            <p class="user_name">エイレーン</p>
+        </div>
+        <!--選択されたフレンドユーザのプロフィール-->
+        <!--編集なので原則としてプロフィール情報を引き継ぐ
+         テキストについては前回のデータを挿入し、プルダウンについてはPHPの「selected」などを用いて前回のデータを参照する-->
+
+        <!--空白の場合がエラーを表示する-->
+        <p class="profile_d">ニックネーム名</p>
+        <!--↓エラーサンプルです。　表示するときはｐタブにクラスを付けてください-->
+        <p class="profile_h">エラーサンプルです。</p>
+        <input type="text" id="user_nickname" class="form-control" value="エイレーン">
+
+        <!--空白の場合はエラー-->
+        <p class="profile_d">プロフィール画像</p>
+        <input id="lefile" type="file" accept="image/*" onChange="imgPreView(event)" style="display:none">
+        <div id="input_image">
+            <p id="image_name"></p>
+            <button id="image_button" onclick="$('input[id=lefile]').click();">選択</button>
+        </div>
+        <div id="preview">
+        </div>
+
+        <p class="profile_d">学科</p>
+        <select id="user_department" class="form-control">
+            <option value="">前回のデータ</option>
+            <option>～～～</option>
+            <option>====</option>
+            <option>~~~~~~</option>
+            <option>^-----</option>
+        </select>
+
+        <p class="profile_d">コース</p>
+        <select id="user_couse" class="form-control">
+            <option value="0">前回のデータ</option>
+            <option value="1">～～～</option>
+            <option value="2">====</option>
+            <option value="3">~~~~~~</option>
+            <option value="4">^-----</option>
+        </select>
+
+        <p class="profile_d">学年</p>
+        <select id="user_schoolyear" class="form-control">
+            <option value="0">前回のデータ</option>
+            <option value="1">～～～</option>
+            <option value="2">====</option>
+            <option value="3">~~~~~~</option>
+            <option value="4">^-----</option>
+        </select>
+
+        <!--空欄の場合と、年齢が17以下の場合にエラー-->
+        <p class="profile_d">年齢</p>
+        <input type="number" id="user_age" class="form-control" value="19">
+
+        <p class="profile_d">性別</p>
+        <select id="user_gender" class="form-control">
+            <option value="0">前回のデータ</option>
+            <option value="1">～～～</option>
+            <option value="2">====</option>
+            <option value="3">~~~~~~</option>
+            <option value="4">^-----</option>
+        </select>
+
+        <!--空欄の場合はエラー-->
+        <p class="profile_d">自己紹介文</p>
+        <textarea id="user_profile" class="form-control" rows="3">ニャンハロー！！　エイレーンだよ</textarea>
+
+
+        <!--データを精査して、ダメならば、エラーを出して、よければ、保存して　自分のプロフィール画面へ飛ぶ-->
+        <input id="edit_btn" type="button" value="プロフィールを変更する">
+    </main>
+
+</body>
+
+</html>
